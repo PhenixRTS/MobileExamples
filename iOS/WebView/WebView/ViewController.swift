@@ -1,49 +1,59 @@
-/*
- * Copyright 2019 Phenix Real Time Solutions, Inc. Confidential and Proprietary. All Rights Reserved.
- *
- *  By using this code you agree to the Phenix Terms of Service found online here:
- *  http://phenixrts.com/terms-of-service.html
- */
+//
+//  Copyright 2020 Phenix Real Time Solutions, Inc. Confidential and Proprietary. All rights reserved.
+//
+
+import os.log
 import UIKit
 import WebKit
 
-/**
- * WebView based channel viewer.<br/>
- * To publish a video to this channel, open the following link in your web browser:
- * In your web browser, open "https://phenixrts.com/channel/publish/#channelAlias"
- */
 class ViewController: UIViewController, WKUIDelegate {
+    @IBOutlet private var webView: WKWebView!
+    @IBOutlet private var urlTextField: UITextField!
 
-    @IBOutlet weak var webView: WKWebView!
-    @IBOutlet weak var editedUrl: UITextField!
-
-    /**
-     * The channel alias is derived from the channel name.
-     * For example, a channel with name "My Channel Name!" will have the alias "myChannelName".
-     */
-    private let channelAlias = "webViewDemo"
-
-    /**
-     * Subscribe link to channel with alias `channelAlias`
-     */
-    private lazy var subscribeUrl = "https://phenixrts.com/channel/#" + channelAlias
+    private(set) var url: String? = "https://phenixrts.com/channel/#webViewDemo"
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        editedUrl.text = subscribeUrl
+        urlTextField.text = url
 
         webView.configuration.allowsInlineMediaPlayback = true
         webView.configuration.mediaTypesRequiringUserActionForPlayback = []
         webView.uiDelegate = self
-        loadUrl(self)
+
+        loadUrl()
     }
 
-    @IBAction func loadUrl(_ sender: Any) {
-        if let urlText = editedUrl?.text, let url = URL(string: urlText) {
-            print("Info", "Loading url \(url)")
-            webView.load(URLRequest(url: url))
+    func set(url: String) {
+        self.url = url
+        urlTextField?.text = url
+    }
+
+    func loadUrl() {
+        guard let urlText = url, let url = URL(string: urlText) else {
+            os_log(.debug, log: .ui, "Incorrect url: %{PRIVATE}s", self.url ?? "-")
+            return
         }
+
+        os_log(.debug, log: .ui, "Loading url: %{PRIVATE}s", url.absoluteString)
+        webView.load(URLRequest(url: url))
+    }
+
+    @IBAction
+    private func loadUrlButtonTapped(_ sender: Any) {
+        guard let urlText = urlTextField.text else {
+            return
+        }
+
+        url = urlText
+        loadUrl()
+        view.endEditing(true)
     }
 }
 
+extension OSLog {
+    private static var subsystem = Bundle.main.bundleIdentifier!
+
+    // MARK: - Application components
+    static let ui = OSLog(subsystem: subsystem, category: "Phenix.App.UserInterface")
+}

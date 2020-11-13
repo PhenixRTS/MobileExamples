@@ -1,5 +1,5 @@
 # WebView Channel Viewer
-This application shows how to subscribe to a channel using the Android native WebView.
+This application shows how to subscribe to a channel using the iOS native WKWebView.
 
 This example application shows how to:
 1. Select the capabilities to subscribe with
@@ -9,7 +9,7 @@ This example application shows how to:
 ## How to Run
 1) To be able to subscribe, you need to publish to a channel first.
 -- You can use our online [channel demo](https://demo.phenixrts.com/channel/publish/#webViewDemo) to publish a stream.
-2) If desired, modify the `channelAlias` constant
+2) If desired, modify the `url` constant
 
 ## See Also
 ### Related Examples
