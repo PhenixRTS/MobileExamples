@@ -1,10 +1,9 @@
 <!--
-  ~ Copyright 2019 Phenix Real Time Solutions, Inc. Confidential and Proprietary. All Rights Reserved.
-  ~
-  ~  By using this code you agree to the Phenix Terms of Service found online here:
-  ~  http://phenixrts.com/terms-of-service.html
+  ~ Copyright 2020 Phenix Real Time Solutions, Inc. Confidential and Proprietary. All rights reserved.
   -->
 
 <resources>
     <string name="app_name">WebView</string>
+    <string name="web_url_hint">https://phenixrts.com/channel/#channel_alias</string>
+    <string name="err_failed_to_join_channel">Failed to load channel.</string>
 </resources>
