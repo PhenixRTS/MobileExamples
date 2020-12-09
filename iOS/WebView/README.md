@@ -1,5 +1,5 @@
 # WebView Channel Viewer
-This application shows how to subscribe to a channel using the Android native WebView.
+This application shows how to subscribe to a channel using the iOS native WebView.
 
 This example application shows how to:
 1. Select the capabilities to subscribe with
