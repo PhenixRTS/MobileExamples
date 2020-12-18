@@ -5,7 +5,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlin_version = '1.4.10'
+    ext.kotlin_version = '1.4.21'
     ext.lifecycle_version = '2.2.0'
     ext.kotlinx_coroutines_version = '1.4.0'
 
@@ -27,6 +27,16 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven {
+            url project.findProperty("phenixMavenRepositoryUrl") ?: "https://maven.pkg.github.com/PhenixRTS/AndroidSDK"
+
+            if (url.toString().contains("maven.pkg.github.com")) {
+                credentials {
+                    username project.findProperty("github.user") != null ? project.findProperty("github.user") as String : System.getenv("USERNAME")
+                    password project.findProperty("github.token") != null ? project.findProperty("github.token") as String : System.getenv("TOKEN")
+                }
+            }
+        }
     }
 }
 
