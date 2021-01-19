@@ -18,12 +18,13 @@ import com.phenixrts.examples.webview.common.hideKeyboard
 import com.phenixrts.examples.webview.common.launchMain
 import com.phenixrts.examples.webview.common.lazyViewModel
 import com.phenixrts.examples.webview.common.showSnackBar
+import com.phenixrts.examples.webview.databinding.ActivityMainBinding
 import com.phenixrts.examples.webview.ui.viewmodels.WebViewModel
-import kotlinx.android.synthetic.main.activity_main.*
 import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
     private val viewModel: WebViewModel by lazyViewModel ({ application as WebViewApp }, {
         WebViewModel()
     })
@@ -31,31 +32,32 @@ class MainActivity : AppCompatActivity() {
     @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        web_url.setOnEditorActionListener { _: TextView?, _: Int, _: KeyEvent? ->
-            val newUrl = web_url.text.toString()
+        binding.webUrl.setOnEditorActionListener { _: TextView?, _: Int, _: KeyEvent? ->
+            val newUrl = binding.webUrl.text.toString()
             loadUrl(newUrl)
             true
         }
 
-        web_load.setOnClickListener {
-            loadUrl(web_url.text.toString())
+        binding.webLoad.setOnClickListener {
+            loadUrl(binding.webUrl.text.toString())
         }
 
-        web_view.settings.javaScriptEnabled = true
-        web_view.settings.databaseEnabled = true
-        web_view.settings.domStorageEnabled = true
-        web_view.settings.cacheMode = WebSettings.LOAD_DEFAULT
-        web_view.settings.mediaPlaybackRequiresUserGesture = false
-        web_view.settings.useWideViewPort = true
-        web_view.settings.builtInZoomControls = true
-        web_view.settings.displayZoomControls = false
-        web_view.settings.loadWithOverviewMode = true
+        binding.webView.settings.javaScriptEnabled = true
+        binding.webView.settings.databaseEnabled = true
+        binding.webView.settings.domStorageEnabled = true
+        binding.webView.settings.cacheMode = WebSettings.LOAD_DEFAULT
+        binding.webView.settings.mediaPlaybackRequiresUserGesture = false
+        binding.webView.settings.useWideViewPort = true
+        binding.webView.settings.builtInZoomControls = true
+        binding.webView.settings.displayZoomControls = false
+        binding.webView.settings.loadWithOverviewMode = true
 
-        web_view.setLayerType(View.LAYER_TYPE_HARDWARE, null)
-        web_view.webChromeClient = WebChromeClient()
-        web_view.webViewClient = object : WebViewClient() {
+        binding.webView.setLayerType(View.LAYER_TYPE_HARDWARE, null)
+        binding.webView.webChromeClient = WebChromeClient()
+        binding.webView.webViewClient = object : WebViewClient() {
 
             override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
                 super.onPageStarted(view, url, favicon)
@@ -69,13 +71,13 @@ class MainActivity : AppCompatActivity() {
 
             override fun onReceivedError(view: WebView?, request: WebResourceRequest?, error: WebResourceError?) {
                 super.onReceivedError(view, request, error)
-                root_view.showSnackBar(getString(R.string.err_failed_to_join_channel))
+                binding.root.showSnackBar(getString(R.string.err_failed_to_join_channel))
                 hideLoading()
             }
 
             override fun onReceivedSslError(view: WebView, handler: SslErrorHandler, error: SslError) {
                 handler.proceed()
-                root_view.showSnackBar(getString(R.string.err_failed_to_join_channel))
+                binding.root.showSnackBar(getString(R.string.err_failed_to_join_channel))
                 hideLoading()
             }
         }
@@ -86,20 +88,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showLoading() = launchMain {
-        web_load.visibility = View.GONE
-        web_loading.visibility = View.VISIBLE
+        binding.webLoad.visibility = View.GONE
+        binding.webLoading.visibility = View.VISIBLE
     }
 
     private fun hideLoading() = launchMain {
-        web_load.visibility = View.VISIBLE
-        web_loading.visibility = View.GONE
+        binding.webLoad.visibility = View.VISIBLE
+        binding.webLoading.visibility = View.GONE
     }
 
     private fun loadUrl(url: String) {
         Timber.d("Loading URL: $url")
         hideKeyboard()
-        web_url.setText("")
-        web_url.append(url)
-        web_view.loadUrl(url)
+        binding.webUrl.setText("")
+        binding.webUrl.append(url)
+        binding.webView.loadUrl(url)
     }
 }

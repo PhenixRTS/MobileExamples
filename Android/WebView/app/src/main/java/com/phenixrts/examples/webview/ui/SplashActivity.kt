@@ -8,10 +8,10 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.phenixrts.examples.webview.BuildConfig
-import com.phenixrts.examples.webview.R
 import com.phenixrts.examples.webview.WebViewApp
 import com.phenixrts.examples.webview.common.launchMain
 import com.phenixrts.examples.webview.common.lazyViewModel
+import com.phenixrts.examples.webview.databinding.ActivitySplashBinding
 import com.phenixrts.examples.webview.ui.viewmodels.WebViewModel
 import timber.log.Timber
 
@@ -19,13 +19,15 @@ private const val QUERY_URL = "url"
 
 class SplashActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivitySplashBinding
     private val viewModel: WebViewModel by lazyViewModel ({ application as WebViewApp }, {
         WebViewModel()
     })
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash)
+        binding = ActivitySplashBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         checkDeepLink(intent)
     }
 
