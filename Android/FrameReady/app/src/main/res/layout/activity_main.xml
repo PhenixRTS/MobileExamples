@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright 2021 Phenix Real Time Solutions, Inc. Confidential and Proprietary. All rights reserved.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primaryDarkColor"
+    tools:context=".ui.MainActivity">
+
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:id="@+id/player_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/video_input_holder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:resize_mode="fit"
+        app:show_buffering="never"
+        app:show_fastforward_button="false"
+        app:show_next_button="false"
+        app:show_previous_button="false"
+        app:show_rewind_button="false"
+        app:show_subtitle_button="false"
+        app:surface_type="texture_view"
+        app:use_controller="false" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/camera_view_holder"
+        android:layout_width="100dp"
+        android:layout_height="140dp"
+        android:layout_marginEnd="@dimen/camera_view_margin_end"
+        android:layout_marginBottom="@dimen/camera_view_margin_bottom"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="5dp"
+        app:strokeWidth="4dp"
+        app:strokeColor="@color/primaryColor"
+        app:cardBackgroundColor="@color/primaryDarkColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/camera_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:contentDescription="@null" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/video_input_holder"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        app:cardBackgroundColor="@color/primaryColor"
+        app:cardElevation="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <RelativeLayout
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/video_input"
+                android:background="@drawable/bg_input_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_channel_alias"
+                android:layout_toStartOf="@id/video_open"
+                android:layout_marginEnd="8dp"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:maxLines="1"
+                android:layout_centerVertical="true"
+                android:padding="8dp"
+                android:imeOptions="actionDone"
+                android:textColor="@color/primaryTextDarkColor" />
+
+            <ImageView
+                android:id="@+id/video_open"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:padding="10dp"
+                android:layout_alignParentEnd="true"
+                android:elevation="5dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/bg_round_ripple"
+                android:src="@drawable/ic_play"
+                android:contentDescription="@null" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <FrameLayout
+        android:id="@+id/loading_progress_bar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

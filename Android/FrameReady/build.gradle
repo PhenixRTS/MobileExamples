@@ -1,0 +1,45 @@
+/*
+ * Copyright 2021 Phenix Real Time Solutions, Inc. Confidential and Proprietary. All rights reserved.
+ */
+
+buildscript {
+    ext.kotlin_version = "1.4.32"
+    ext.kotlinx_coroutines_version = '1.4.3-native-mt'
+    ext.kotlinx_serialization_version = '1.0.0-RC'
+    ext.lifecycle_version = '2.3.1'
+    ext.navigation_version = '2.3.4'
+    ext.dagger_version = '2.33'
+    ext.exoplayer_version = "2.12.0"
+    ext.phenix_version = '2021.0.4'
+
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.0.0-alpha13'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-serialization:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven {
+            url project.findProperty("phenixMavenRepositoryUrl") ?: "https://maven.pkg.github.com/PhenixRTS/AndroidSDK"
+
+            if (url.toString().contains("maven.pkg.github.com")) {
+                credentials {
+                    username project.findProperty("github.user") != null ? project.findProperty("github.user") as String : System.getenv("USERNAME")
+                    password project.findProperty("github.token") != null ? project.findProperty("github.token") as String : System.getenv("TOKEN")
+                }
+            }
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
