@@ -1,0 +1,446 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		24A49B071F716F7200B20B26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A49B061F716F7200B20B26 /* AppDelegate.swift */; };
+		24A49B091F716F7200B20B26 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A49B081F716F7200B20B26 /* ViewController.swift */; };
+		24A49B0C1F716F7200B20B26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24A49B0A1F716F7200B20B26 /* Main.storyboard */; };
+		24A49B0E1F716F7200B20B26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24A49B0D1F716F7200B20B26 /* Assets.xcassets */; };
+		24A49B111F716F7200B20B26 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24A49B0F1F716F7200B20B26 /* LaunchScreen.storyboard */; };
+		45AF9C1F22E08E260087F5B3 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45AF9C1E22E08E260087F5B3 /* WebKit.framework */; };
+		5CA7249B257FD14E006666A9 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA7249A257FD14E006666A9 /* String.swift */; };
+		B5170F6A255573D600255FC0 /* DeeplinkModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5170F67255573D600255FC0 /* DeeplinkModelProvider.swift */; };
+		B5170F6B255573D600255FC0 /* DeeplinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5170F68255573D600255FC0 /* DeeplinkModel.swift */; };
+		B5170F6C255573D600255FC0 /* DeeplinkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5170F69255573D600255FC0 /* DeeplinkService.swift */; };
+		B5170F732555747600255FC0 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5170F722555747600255FC0 /* Colors.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		24A49B031F716F7200B20B26 /* WebView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		24A49B061F716F7200B20B26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		24A49B081F716F7200B20B26 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		24A49B0B1F716F7200B20B26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		24A49B0D1F716F7200B20B26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		24A49B101F716F7200B20B26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		24A49B121F716F7200B20B26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45AF9C1E22E08E260087F5B3 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		5CA7249A257FD14E006666A9 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		B5170F67255573D600255FC0 /* DeeplinkModelProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeeplinkModelProvider.swift; sourceTree = "<group>"; };
+		B5170F68255573D600255FC0 /* DeeplinkModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeeplinkModel.swift; sourceTree = "<group>"; };
+		B5170F69255573D600255FC0 /* DeeplinkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeeplinkService.swift; sourceTree = "<group>"; };
+		B5170F722555747600255FC0 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		B5170F7F25557BC800255FC0 /* WebView.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WebView.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		24A49B001F716F7200B20B26 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45AF9C1F22E08E260087F5B3 /* WebKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		24A49AFA1F716F7200B20B26 = {
+			isa = PBXGroup;
+			children = (
+				24A49B051F716F7200B20B26 /* WebView */,
+				24A49B041F716F7200B20B26 /* Products */,
+				45AF9C1D22E08E250087F5B3 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		24A49B041F716F7200B20B26 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				24A49B031F716F7200B20B26 /* WebView.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		24A49B051F716F7200B20B26 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				B5170F7F25557BC800255FC0 /* WebView.entitlements */,
+				24A49B061F716F7200B20B26 /* AppDelegate.swift */,
+				24A49B081F716F7200B20B26 /* ViewController.swift */,
+				B5170F66255573D600255FC0 /* Deeplink */,
+				B5170F712555746100255FC0 /* Resources */,
+				B5170F6F2555740B00255FC0 /* Supporting Files */,
+				B5170F6E255573E300255FC0 /* User Interface */,
+			);
+			name = WebView;
+			path = WebViewDebug;
+			sourceTree = "<group>";
+		};
+		45AF9C1D22E08E250087F5B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				45AF9C1E22E08E260087F5B3 /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B5170F66255573D600255FC0 /* Deeplink */ = {
+			isa = PBXGroup;
+			children = (
+				B5170F67255573D600255FC0 /* DeeplinkModelProvider.swift */,
+				B5170F68255573D600255FC0 /* DeeplinkModel.swift */,
+				B5170F69255573D600255FC0 /* DeeplinkService.swift */,
+			);
+			path = Deeplink;
+			sourceTree = "<group>";
+		};
+		B5170F6E255573E300255FC0 /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				24A49B0A1F716F7200B20B26 /* Main.storyboard */,
+			);
+			path = "User Interface";
+			sourceTree = "<group>";
+		};
+		B5170F6F2555740B00255FC0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				24A49B0F1F716F7200B20B26 /* LaunchScreen.storyboard */,
+				24A49B121F716F7200B20B26 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B5170F712555746100255FC0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				24A49B0D1F716F7200B20B26 /* Assets.xcassets */,
+				B5170F722555747600255FC0 /* Colors.xcassets */,
+				5CA7249A257FD14E006666A9 /* String.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		24A49B021F716F7200B20B26 /* WebView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 24A49B151F716F7200B20B26 /* Build configuration list for PBXNativeTarget "WebView" */;
+			buildPhases = (
+				24A49AFF1F716F7200B20B26 /* Sources */,
+				24A49B001F716F7200B20B26 /* Frameworks */,
+				24A49B011F716F7200B20B26 /* Resources */,
+				B5170F5C2555701100255FC0 /* Catch bad copyrights */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WebView;
+			productName = WebView;
+			productReference = 24A49B031F716F7200B20B26 /* WebView.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		24A49AFB1F716F7200B20B26 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 1210;
+				ORGANIZATIONNAME = "Phenix Real Time Solutions, Inc";
+				TargetAttributes = {
+					24A49B021F716F7200B20B26 = {
+						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 1030;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 24A49AFE1F716F7200B20B26 /* Build configuration list for PBXProject "WebViewDebug" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 24A49AFA1F716F7200B20B26;
+			productRefGroup = 24A49B041F716F7200B20B26 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				24A49B021F716F7200B20B26 /* WebView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		24A49B011F716F7200B20B26 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				24A49B111F716F7200B20B26 /* LaunchScreen.storyboard in Resources */,
+				B5170F732555747600255FC0 /* Colors.xcassets in Resources */,
+				24A49B0E1F716F7200B20B26 /* Assets.xcassets in Resources */,
+				24A49B0C1F716F7200B20B26 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B5170F5C2555701100255FC0 /* Catch bad copyrights */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Catch bad copyrights";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "COPYRIGHT=\"Copyright $(date +\"%Y\") Phenix Real Time Solutions, Inc. Confidential and Proprietary. All rights reserved.\"\n\n# Paths which contains files, which needs to be checked.\nPATH1=\"${SRCROOT}/WebView\"\n\nPATHS=(${PATH1} ${PATH2})\n\nfor i in \"${PATHS[@]}\"\ndo\n   echo \"searching ${i} for ${COPYRIGHT}\"\n   find \"${i}\" \\( -name \"*.h\" -or -name \"*.m\" -or -name \"*.swift\" \\) -print0 \\\n       | xargs -0 egrep --with-filename --files-without-match \"($COPYRIGHT)\" \\\n       | perl -p -e \"s/(.*)$/\\$1: warning: Incorrect or no copyright \\$1/\"\ndone\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		24A49AFF1F716F7200B20B26 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CA7249B257FD14E006666A9 /* String.swift in Sources */,
+				24A49B091F716F7200B20B26 /* ViewController.swift in Sources */,
+				24A49B071F716F7200B20B26 /* AppDelegate.swift in Sources */,
+				B5170F6C255573D600255FC0 /* DeeplinkService.swift in Sources */,
+				B5170F6A255573D600255FC0 /* DeeplinkModelProvider.swift in Sources */,
+				B5170F6B255573D600255FC0 /* DeeplinkModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		24A49B0A1F716F7200B20B26 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24A49B0B1F716F7200B20B26 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		24A49B0F1F716F7200B20B26 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				24A49B101F716F7200B20B26 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		24A49B131F716F7200B20B26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		24A49B141F716F7200B20B26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		24A49B161F716F7200B20B26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WebView/WebView.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/WebViewDebug/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 2021.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.phenixrts.webview.deeplink.debug;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		24A49B171F716F7200B20B26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WebView/WebView.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/WebViewDebug/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 2021.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.phenixrts.webview.deeplink.debug;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		24A49AFE1F716F7200B20B26 /* Build configuration list for PBXProject "WebViewDebug" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24A49B131F716F7200B20B26 /* Debug */,
+				24A49B141F716F7200B20B26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24A49B151F716F7200B20B26 /* Build configuration list for PBXNativeTarget "WebView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24A49B161F716F7200B20B26 /* Debug */,
+				24A49B171F716F7200B20B26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 24A49AFB1F716F7200B20B26 /* Project object */;
+}
