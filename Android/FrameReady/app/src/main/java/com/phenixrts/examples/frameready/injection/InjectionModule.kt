@@ -15,6 +15,6 @@ class InjectionModule(private val context: FrameReadyApp) {
 
     @Singleton
     @Provides
-    fun provideRoomExpressRepository() = ChannelExpressRepository(context)
+    fun provideChannelExpressRepository() = ChannelExpressRepository(context)
 
 }
